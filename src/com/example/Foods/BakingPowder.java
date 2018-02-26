@@ -6,6 +6,8 @@ public class BakingPowder implements Food {
 
     private String foodName = "Baking Powder";
     private double foodValue = .25;
+    private static final double MARKET_VALUE = .8;
+
 
     @Override
     public String getFoodName() {
@@ -19,7 +21,7 @@ public class BakingPowder implements Food {
 
     @Override
     public double sellToMarket() {
-        double marketValue = foodValue * .8;
+        double marketValue = foodValue * MARKET_VALUE;
         return ResturantMethods.roundNumber(marketValue);
     }
 }

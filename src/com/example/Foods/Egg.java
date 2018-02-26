@@ -5,6 +5,7 @@ import com.example.*;
 public class Egg implements Food {
     private String foodName = "Egg";
     private double foodValue = .10;
+    private static final double MARKET_VALUE = .8;
 
     @Override
     public String getFoodName() {
@@ -18,7 +19,7 @@ public class Egg implements Food {
 
     @Override
     public double sellToMarket() {
-        double marketValue = foodValue * .8;
+        double marketValue = foodValue * MARKET_VALUE;
         return ResturantMethods.roundNumber(marketValue);
     }
 }
