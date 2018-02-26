@@ -8,7 +8,6 @@ public class Bread implements Food {
     private double foodValue = .50;
     private static final double MARKET_VALUE = .8;
 
-
     @Override
     public String getFoodName() {
         return foodName;

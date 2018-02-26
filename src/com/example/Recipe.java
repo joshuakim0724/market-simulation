@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.ArrayList;
+
 public interface Recipe {
 
     public String getRecipeName();
@@ -7,7 +9,7 @@ public interface Recipe {
      * A list of food needed to create this recipe
      * @return a list of food needed to create this recipe
      */
-    public Food[] getIngreidentList();
+    public ArrayList<Food> getIngredientList();
 
     /**
      * @return the food that this recipe will create
@@ -18,13 +20,15 @@ public interface Recipe {
      * A list of equipment needed to create this recipe
      * @return a list of equipment needed to create this equipment
      */
-    public Equipment[] equipmentList();
+    public ArrayList<Equipment> equipmentList();
 
     /**
      * 1 == 1 minute
      * @return Time needed to create this recipe
      */
     public int timeRequired();
+
+    public double recipePrice();
 
     /**
      * Recipes can also be sold at the market at 0.5x the base value
