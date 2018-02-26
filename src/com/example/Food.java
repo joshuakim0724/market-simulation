@@ -2,13 +2,16 @@ package com.example;
 
 public interface Food {
 
+    public String getFoodName();
+
     /**
-     * base value that it can be bought from the market at
-     * @return
+     * @return this will return how much the food is worth
      */
     public double getFoodValue();
 
+    /**
+     * Food can also be sold at the market at 0.8x the base value
+     * @return this will return how you will get it you sell the food for the market
+     */
     public double sellToMarket();
-
-
 }
