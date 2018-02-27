@@ -17,7 +17,7 @@
         "foodValue" : ".50"
       },
       {
-        "foodName" : "Bacon Omelette",
+        "foodName" : "BaconOmelette",
         "foodValue" : "6"
       },
       {
@@ -25,7 +25,7 @@
         "foodValue" : ".50"
       },
       {
-        "foodName" : "Breakfast Potatoes",
+        "foodName" : "BreakfastPotatoes",
         "foodValue" : "3"
       },
       {
@@ -33,7 +33,7 @@
         "foodValue" : ".5"
       },
       {
-        "foodName" : "Cooked Bacon",
+        "foodName" : "CookedBacon",
         "foodValue" : "3"
       },
       {
@@ -41,15 +41,15 @@
         "foodValue" : ".50"
       },
       {
-        "foodName" : "Eggs and Toast",
+        "foodName" : "EggsAndToast",
         "foodValue" : "5"
       },
       {
-        "foodName" : "Grilled Cheese",
+        "foodName" : "GrilledCheese",
         "foodValue" : "4"
       },
       {
-        "foodName" : "Hash Browns",
+        "foodName" : "HashBrowns",
         "foodValue" : "3"
       },
       {
@@ -61,7 +61,7 @@
         "foodValue" : ".50"
       },
       {
-        "foodName" : "Spinach Omelette",
+        "foodName" : "SpinachOmelette",
         "foodValue" : "6"
       }
     ],
@@ -73,7 +73,7 @@
         "upkeepValue" : 2
       },
       {
-        "equipmentName" : "Frying Pan",
+        "equipmentName" : "FryingPan",
         "equipmentValue" : 30,
         "upkeepValue" : 1.5
       },
@@ -91,86 +91,86 @@
     "recipeAvailable" :
     [
       {
-        "recipeName" : "Bacon Omlette Recipe",
+        "recipeName" : "BaconOmeletteRecipe",
         "ingredientList" : ["Bacon", "Egg"],
-        "equipmentList" : ["Frying Pan"],
+        "equipmentList" : ["FryingPan"],
         "recipeValue" : 5.00,
         "timeRequired" : 15,
         "outputFood" :
         {
-          "foodName" : "Bacon Omelette",
+          "foodName" : "BaconOmelette",
           "foodValue" : "6"
         }
       },
       {
-        "recipeName" : "Breakfast Potatoes Recipe",
+        "recipeName" : "BreakfastPotatoesRecipe",
         "ingredientList" : ["Bacon", "Egg"],
-        "equipmentList" : ["Frying Pan"],
+        "equipmentList" : ["FryingPan"],
         "recipeValue" : 3.00,
         "timeRequired" : 5,
         "outputFood" :
         {
-          "foodName" : "Breakfast Potatoes",
+          "foodName" : "BreakfastPotatoes",
           "foodValue" : 5
         }
       },
       {
-        "recipeName" : "Cooked Bacon Recipe",
+        "recipeName" : "CookedBaconRecipe",
         "ingredientList" : ["Bacon"],
         "equipmentList" : ["Frying Pan"],
         "recipeValue" : 3.00,
         "timeRequired" : 5,
         "outputFood" :
         {
-          "foodName" : "Cooked Bacon",
+          "foodName" : "CookedBacon",
           "foodValue" : 5
         }
       },
       {
-        "recipeName" : "Eggs and Toast Recipe",
+        "recipeName" : "EggsAndToastRecipe",
         "ingredientList" : ["Egg", "Bread"],
-        "equipmentList" : ["Frying Pan","Toaster"],
+        "equipmentList" : ["FryingPan","Toaster"],
         "recipeValue" : 5.00,
         "timeRequired" : 12,
         "outputFood" :
         {
-          "foodName" : "Eggs and Toast",
+          "foodName" : "EggsAndToast",
           "foodValue" : 5
         }
       },
       {
-        "recipeName" : "Grilled Cheese Recipe",
+        "recipeName" : "GrilledCheeseRecipe",
         "ingredientList" : ["Cheese", "Bread"],
-        "equipmentList" : ["Frying Pan"],
+        "equipmentList" : ["FryingPan"],
         "recipeValue" : 4.00,
         "timeRequired" : 10,
         "outputFood" :
         {
-          "foodName" : "Grilled Cheese",
+          "foodName" : "GrilledCheese",
           "foodValue" : 4
         }
       },
       {
-        "recipeName" : "Hash Browns Recipe",
+        "recipeName" : "HashBrownsRecipe",
         "ingredientList" : ["Potato"],
         "equipmentList" : ["Fryer"],
         "recipeValue" : 3.00,
         "timeRequired" : 5,
         "outputFood" :
         {
-          "foodName" : "Hash Browns",
+          "foodName" : "HashBrowns",
           "foodValue" : 3
         }
       },
       {
-        "recipeName" : "Spinach Omeltte Recipe",
+        "recipeName" : "SpinachOmeletteRecipe",
         "ingredientList" : ["Egg", "Spinach"],
-        "equipmentList" : ["Frying Pan"],
+        "equipmentList" : ["FryingPan"],
         "recipeValue" : 5.00,
         "timeRequired" : 15,
         "outputFood" :
         {
-          "foodName" : "Spinach Omeltte",
+          "foodName" : "SpinachOmelette",
           "foodValue" : 3
         }
       }

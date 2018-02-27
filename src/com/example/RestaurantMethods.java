@@ -60,8 +60,8 @@ public class RestaurantMethods {
         recipeInfo.append("\n");
 
         recipeInfo.append(SimulationConstants.EQUIPMENT_NEEDED);
-        for (int j = 0; j < recipe.equipmentList().length; j ++) {
-            String equipmentName = recipe.equipmentList()[j];
+        for (int j = 0; j < recipe.getEquipmentList().length; j ++) {
+            String equipmentName = recipe.getEquipmentList()[j];
             recipeInfo.append(equipmentName);
             if (j != recipe.getIngredientList().length - 2) {
                 recipeInfo.append(", ");
@@ -74,7 +74,7 @@ public class RestaurantMethods {
         recipeInfo.append("\n");
 
         recipeInfo.append(SimulationConstants.RECIPE_MAKES);
-        recipeInfo.append(recipe.outputFood().getFoodName());
+        recipeInfo.append(recipe.getOutputFood().getFoodName());
 
         return recipeInfo;
     }

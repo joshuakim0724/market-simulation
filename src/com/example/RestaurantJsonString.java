@@ -1,12 +1,13 @@
 package com.example;
 
-public class ResturantJsonString {
-    public static final String BREAKFAST_RESTURANT = "{\n" +
+public class RestaurantJsonString {
+
+    public static final String BREAKFAST_RESTAURANT = "{\n" +
             "  \"money\": 200,\n" +
             "  \"time\" :\n" +
             "  {\n" +
-            "    \"hours\" : 0,\n" +
-            "    \"minutes\" : 0,\n" +
+            "    \"hours\" : 00,\n" +
+            "    \"minutes\" : 00,\n" +
             "    \"day\" : 0\n" +
             "  },\n" +
             "  \"Menu\" : {},\n" +
@@ -20,7 +21,7 @@ public class ResturantJsonString {
             "        \"foodValue\" : \".50\"\n" +
             "      },\n" +
             "      {\n" +
-            "        \"foodName\" : \"Bacon Omelette\",\n" +
+            "        \"foodName\" : \"BaconOmelette\",\n" +
             "        \"foodValue\" : \"6\"\n" +
             "      },\n" +
             "      {\n" +
@@ -28,7 +29,7 @@ public class ResturantJsonString {
             "        \"foodValue\" : \".50\"\n" +
             "      },\n" +
             "      {\n" +
-            "        \"foodName\" : \"Breakfast Potatoes\",\n" +
+            "        \"foodName\" : \"BreakfastPotatoes\",\n" +
             "        \"foodValue\" : \"3\"\n" +
             "      },\n" +
             "      {\n" +
@@ -36,7 +37,7 @@ public class ResturantJsonString {
             "        \"foodValue\" : \".5\"\n" +
             "      },\n" +
             "      {\n" +
-            "        \"foodName\" : \"Cooked Bacon\",\n" +
+            "        \"foodName\" : \"CookedBacon\",\n" +
             "        \"foodValue\" : \"3\"\n" +
             "      },\n" +
             "      {\n" +
@@ -44,15 +45,15 @@ public class ResturantJsonString {
             "        \"foodValue\" : \".50\"\n" +
             "      },\n" +
             "      {\n" +
-            "        \"foodName\" : \"Eggs and Toast\",\n" +
+            "        \"foodName\" : \"EggsAndToast\",\n" +
             "        \"foodValue\" : \"5\"\n" +
             "      },\n" +
             "      {\n" +
-            "        \"foodName\" : \"Grilled Cheese\",\n" +
+            "        \"foodName\" : \"GrilledCheese\",\n" +
             "        \"foodValue\" : \"4\"\n" +
             "      },\n" +
             "      {\n" +
-            "        \"foodName\" : \"Hash Browns\",\n" +
+            "        \"foodName\" : \"HashBrowns\",\n" +
             "        \"foodValue\" : \"3\"\n" +
             "      },\n" +
             "      {\n" +
@@ -64,7 +65,7 @@ public class ResturantJsonString {
             "        \"foodValue\" : \".50\"\n" +
             "      },\n" +
             "      {\n" +
-            "        \"foodName\" : \"Spinach Omelette\",\n" +
+            "        \"foodName\" : \"SpinachOmelette\",\n" +
             "        \"foodValue\" : \"6\"\n" +
             "      }\n" +
             "    ],\n" +
@@ -76,7 +77,7 @@ public class ResturantJsonString {
             "        \"upkeepValue\" : 2\n" +
             "      },\n" +
             "      {\n" +
-            "        \"equipmentName\" : \"Frying Pan\",\n" +
+            "        \"equipmentName\" : \"FryingPan\",\n" +
             "        \"equipmentValue\" : 30,\n" +
             "        \"upkeepValue\" : 1.5\n" +
             "      },\n" +
@@ -94,86 +95,86 @@ public class ResturantJsonString {
             "    \"recipeAvailable\" :\n" +
             "    [\n" +
             "      {\n" +
-            "        \"recipeName\" : \"Bacon Omlette Recipe\",\n" +
+            "        \"recipeName\" : \"BaconOmeletteRecipe\",\n" +
             "        \"ingredientList\" : [\"Bacon\", \"Egg\"],\n" +
-            "        \"equipmentList\" : [\"Frying Pan\"],\n" +
+            "        \"equipmentList\" : [\"FryingPan\"],\n" +
             "        \"recipeValue\" : 5.00,\n" +
             "        \"timeRequired\" : 15,\n" +
             "        \"outputFood\" :\n" +
             "        {\n" +
-            "          \"foodName\" : \"Bacon Omelette\",\n" +
+            "          \"foodName\" : \"BaconOmelette\",\n" +
             "          \"foodValue\" : \"6\"\n" +
             "        }\n" +
             "      },\n" +
             "      {\n" +
-            "        \"recipeName\" : \"Breakfast Potatoes Recipe\",\n" +
+            "        \"recipeName\" : \"BreakfastPotatoesRecipe\",\n" +
             "        \"ingredientList\" : [\"Bacon\", \"Egg\"],\n" +
-            "        \"equipmentList\" : [\"Frying Pan\"],\n" +
+            "        \"equipmentList\" : [\"FryingPan\"],\n" +
             "        \"recipeValue\" : 3.00,\n" +
             "        \"timeRequired\" : 5,\n" +
             "        \"outputFood\" :\n" +
             "        {\n" +
-            "          \"foodName\" : \"Breakfast Potatoes\",\n" +
+            "          \"foodName\" : \"BreakfastPotatoes\",\n" +
             "          \"foodValue\" : 5\n" +
             "        }\n" +
             "      },\n" +
             "      {\n" +
-            "        \"recipeName\" : \"Cooked Bacon Recipe\",\n" +
+            "        \"recipeName\" : \"CookedBaconRecipe\",\n" +
             "        \"ingredientList\" : [\"Bacon\"],\n" +
             "        \"equipmentList\" : [\"Frying Pan\"],\n" +
             "        \"recipeValue\" : 3.00,\n" +
             "        \"timeRequired\" : 5,\n" +
             "        \"outputFood\" :\n" +
             "        {\n" +
-            "          \"foodName\" : \"Cooked Bacon\",\n" +
+            "          \"foodName\" : \"CookedBacon\",\n" +
             "          \"foodValue\" : 5\n" +
             "        }\n" +
             "      },\n" +
             "      {\n" +
-            "        \"recipeName\" : \"Eggs and Toast Recipe\",\n" +
+            "        \"recipeName\" : \"EggsAndToastRecipe\",\n" +
             "        \"ingredientList\" : [\"Egg\", \"Bread\"],\n" +
-            "        \"equipmentList\" : [\"Frying Pan\",\"Toaster\"],\n" +
+            "        \"equipmentList\" : [\"FryingPan\",\"Toaster\"],\n" +
             "        \"recipeValue\" : 5.00,\n" +
             "        \"timeRequired\" : 12,\n" +
             "        \"outputFood\" :\n" +
             "        {\n" +
-            "          \"foodName\" : \"Eggs and Toast\",\n" +
+            "          \"foodName\" : \"EggsAndToast\",\n" +
             "          \"foodValue\" : 5\n" +
             "        }\n" +
             "      },\n" +
             "      {\n" +
-            "        \"recipeName\" : \"Grilled Cheese Recipe\",\n" +
+            "        \"recipeName\" : \"GrilledCheeseRecipe\",\n" +
             "        \"ingredientList\" : [\"Cheese\", \"Bread\"],\n" +
-            "        \"equipmentList\" : [\"Frying Pan\"],\n" +
+            "        \"equipmentList\" : [\"FryingPan\"],\n" +
             "        \"recipeValue\" : 4.00,\n" +
             "        \"timeRequired\" : 10,\n" +
             "        \"outputFood\" :\n" +
             "        {\n" +
-            "          \"foodName\" : \"Grilled Cheese\",\n" +
+            "          \"foodName\" : \"GrilledCheese\",\n" +
             "          \"foodValue\" : 4\n" +
             "        }\n" +
             "      },\n" +
             "      {\n" +
-            "        \"recipeName\" : \"Hash Browns Recipe\",\n" +
+            "        \"recipeName\" : \"HashBrownsRecipe\",\n" +
             "        \"ingredientList\" : [\"Potato\"],\n" +
             "        \"equipmentList\" : [\"Fryer\"],\n" +
             "        \"recipeValue\" : 3.00,\n" +
             "        \"timeRequired\" : 5,\n" +
             "        \"outputFood\" :\n" +
             "        {\n" +
-            "          \"foodName\" : \"Hash Browns\",\n" +
+            "          \"foodName\" : \"HashBrowns\",\n" +
             "          \"foodValue\" : 3\n" +
             "        }\n" +
             "      },\n" +
             "      {\n" +
-            "        \"recipeName\" : \"Spinach Omeltte Recipe\",\n" +
+            "        \"recipeName\" : \"SpinachOmeletteRecipe\",\n" +
             "        \"ingredientList\" : [\"Egg\", \"Spinach\"],\n" +
-            "        \"equipmentList\" : [\"Frying Pan\"],\n" +
+            "        \"equipmentList\" : [\"FryingPan\"],\n" +
             "        \"recipeValue\" : 5.00,\n" +
             "        \"timeRequired\" : 15,\n" +
             "        \"outputFood\" :\n" +
             "        {\n" +
-            "          \"foodName\" : \"Spinach Omeltte\",\n" +
+            "          \"foodName\" : \"SpinachOmelette\",\n" +
             "          \"foodValue\" : 3\n" +
             "        }\n" +
             "      }\n" +

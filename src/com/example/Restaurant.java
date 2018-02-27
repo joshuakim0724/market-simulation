@@ -125,12 +125,21 @@ public class Restaurant {
         return inventory;
     }
 
-    public boolean cookFood(Recipe recipe) {
-        if (!recipeOwned.contains(recipe)) {
+    public boolean cookFood(String foodName) {
+        foodName += "Recipe";
+        Recipe recipe = null;
+
+        for (Recipe aRecipeOwned : recipeOwned) {
+            if (aRecipeOwned.getRecipeName().equalsIgnoreCase(foodName)) {
+                recipe = aRecipeOwned;
+            }
+        }
+
+        if (recipe == null || !recipeOwned.contains(recipe)) {
             return false;
         }
 
-        String[] equipmentList = recipe.equipmentList();
+        String[] equipmentList = recipe.getEquipmentList();
 
         String[] foodList = recipe.getIngredientList();
 
@@ -161,7 +170,17 @@ public class Restaurant {
             if (!foodExists) {
                 return false;
             }
+
         }
+        for (String foodListName : foodList) {
+            for (Food aFoodOwned : foodOwned) {
+                String foodOwnedName = aFoodOwned.getFoodName();
+                if (foodListName.equalsIgnoreCase(foodOwnedName)) {
+                    foodOwned.remove(aFoodOwned);
+                }
+            }
+        }
+        time.addMinutes(recipe.getTimeRequired());
         return true;
     }
 
