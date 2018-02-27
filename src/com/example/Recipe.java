@@ -26,7 +26,7 @@ public interface Recipe {
      */
     public int timeRequired();
 
-    public double recipePrice();
+    public double getRecipeValue();
 
     /**
      * Recipes can also be sold at the market at 0.5x the base value
