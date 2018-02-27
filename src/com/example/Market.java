@@ -44,7 +44,7 @@ public class Market {
         return equipmentOutput;
     }
 
-    public StringBuffer recipeAvilable() {
+    public StringBuffer recipeAvailable() {
         StringBuffer recipeOutput = new StringBuffer();
 
         for (Recipe aRecipeAvailable : recipeAvailable) {
