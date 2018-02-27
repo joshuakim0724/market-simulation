@@ -1,7 +1,6 @@
 package com.example;
 import java.lang.StringBuffer;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Restaurant {
 
@@ -10,13 +9,9 @@ public class Restaurant {
     private Time time;
     private double money;
 
-    private Food[] foodOwned;
-    private Equipment[] equipmentOwned;
-    private Recipe[] recipeOwned;
-
-    private ArrayList<Food> foodArray;
-    private ArrayList<Recipe> recipeArray;
-
+    private ArrayList<Food> foodOwned = new ArrayList<>();
+    private ArrayList<Equipment> equipmentOwned = new ArrayList<>();
+    private ArrayList<Recipe> recipeOwned = new ArrayList<>();
 
     public Market getMarket() {
         return market;
@@ -34,16 +29,46 @@ public class Restaurant {
         return money;
     }
 
-    public Food[] getFoodOwned() {
+    public ArrayList<Food> getFoodOwned() {
         return foodOwned;
     }
 
-    public Equipment[] getEquipmentOwned() {
+    public ArrayList<Equipment> getEquipmentOwned() {
         return equipmentOwned;
     }
 
-    public Recipe[] getRecipeOwned() {
+    public ArrayList<Recipe> getRecipeOwned() {
         return recipeOwned;
+    }
+
+    public Food getFood(String input) {
+        for (Food aFoodOwned : foodOwned) {
+            String foodOwnedName = aFoodOwned.getFoodName();
+            if (input.equalsIgnoreCase(foodOwnedName)) {
+                return aFoodOwned;
+            }
+        }
+        return null;
+    }
+
+    public Equipment getEquipment(String input) {
+        for (Equipment aEquipmentOwned : equipmentOwned) {
+            String equipmentOwnedName = aEquipmentOwned.getEquipmentName();
+            if (input.equalsIgnoreCase(equipmentOwnedName)) {
+                return aEquipmentOwned;
+            }
+        }
+        return null;
+    }
+
+    public Recipe getRecipe(String input) {
+        for (Recipe aRecipeOwned : recipeOwned) {
+            String recipeOwnedName = aRecipeOwned.getRecipeName();
+            if (input.equalsIgnoreCase(recipeOwnedName)) {
+                return aRecipeOwned;
+            }
+        }
+        return null;
     }
 
     public StringBuffer displayMoney() {
@@ -101,9 +126,7 @@ public class Restaurant {
     }
 
     public boolean cookFood(Recipe recipe) {
-        recipeArray = new ArrayList<Recipe>(Arrays.asList(recipeOwned));
-
-        if (!recipeArray.contains(recipe)) {
+        if (!recipeOwned.contains(recipe)) {
             return false;
         }
 
@@ -143,12 +166,119 @@ public class Restaurant {
     }
 
     public boolean addItemToMenu(Food food) {
-        foodArray = new ArrayList<Food>(Arrays.asList(foodOwned));
-
-        if (!foodArray.contains(food)) {
+        if (!foodOwned.contains(food)) {
             return false;
         }
         menu.addItem(food);
         return true;
+    }
+
+    public boolean buyFromMarket(String itemName) {
+        double itemCost;
+
+        if (market.isFood(itemName)) {
+            Food food = market.getFood(itemName);
+
+            /* This checks if you can afford the item */
+            itemCost = food.getFoodValue();
+            if (!canBuyItem(itemCost)) {
+                return false;
+            }
+            money -= itemCost;
+
+            foodOwned.add(food);
+
+            return true;
+        }
+        if (market.isEquipment(itemName)) {
+            Equipment equipment = market.getEquipment(itemName);
+
+            /* This checks if you can afford the item */
+            itemCost = equipment.getEquipmentValue();
+            if (!canBuyItem(itemCost)) {
+                return false;
+            }
+            money -= itemCost;
+
+            equipmentOwned.add(equipment);
+
+            return true;
+        }
+        if (market.isRecipe(itemName)) {
+            Recipe recipe = market.getRecipe(itemName);
+
+            /* This checks if you can afford the item */
+            itemCost = recipe.getRecipeValue();
+            if (!canBuyItem(itemCost)) {
+                return false;
+            }
+            money -= itemCost;
+
+            recipeOwned.add(recipe);
+
+            return true;
+        }
+        return false;
+    }
+
+    public boolean sellToMarket(String itemName) {
+        double itemCost;
+
+        if (market.isFood(itemName)) {
+            Food food = getFood(itemName);
+
+            /* Makes sure the item isn't null/ item is valid */
+            if (food == null) {
+                return false;
+            }
+
+            itemCost = food.getFoodValue() * SimulationConstants.FOOD_RESELL_VALUE;
+            itemCost = RestaurantMethods.roundNumber(itemCost);
+
+            money += itemCost;
+
+            foodOwned.remove(food);
+
+            return true;
+        }
+        if (market.isEquipment(itemName)) {
+            Equipment equipment = getEquipment(itemName);
+
+            /* Makes sure the item isn't null/ item is valid */
+            if (equipment == null) {
+                return false;
+            }
+
+            itemCost = equipment.getEquipmentValue() * SimulationConstants.EQUIPMENT_RESELL_VALUE;
+            itemCost = RestaurantMethods.roundNumber(itemCost);
+
+            money += itemCost;
+
+            equipmentOwned.remove(equipment);
+
+            return true;
+        }
+        if (market.isRecipe(itemName)) {
+            Recipe recipe = getRecipe(itemName);
+
+            /* Makes sure the item isn't null/ item is valid */
+            if (recipe == null) {
+                return false;
+            }
+
+            itemCost = recipe.getRecipeValue() * SimulationConstants.RECIPE_RESELL_VALUE;
+            itemCost = RestaurantMethods.roundNumber(itemCost);
+
+            money += itemCost;
+
+            recipeOwned.remove(recipe);
+
+            return true;
+        }
+        return false;
+    }
+
+    public boolean canBuyItem(double amount) {
+        return money - amount >= 0;
     }
 }
