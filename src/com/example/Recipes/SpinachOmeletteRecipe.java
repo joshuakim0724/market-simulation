@@ -3,7 +3,7 @@ package com.example.Recipes;
 import com.example.*;
 import com.example.Foods.*;
 
-public class SpinachOmeletteRecipe implements Recipe {
+public class SpinachOmeletteRecipe implements RecipeInterface {
 
     private String recipeName = "Bacon Omelette";
     private String[] ingredientList;
@@ -11,7 +11,6 @@ public class SpinachOmeletteRecipe implements Recipe {
 
     private double recipeValue = 5;
     private static final double MARKET_VALUE = .5;
-
 
     @Override
     public String getRecipeName() {
@@ -25,8 +24,9 @@ public class SpinachOmeletteRecipe implements Recipe {
 
     @Override
     public Food outputFood() {
-        Food baconOmelette = new BaconOmelette();
-        return baconOmelette;
+//        Food baconOmelette = (Food) new BaconOmelette();
+//        return baconOmelette;
+        return null;
     }
 
     @Override

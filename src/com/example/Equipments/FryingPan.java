@@ -2,7 +2,7 @@ package com.example.Equipments;
 
 import com.example.*;
 
-public class FryingPan implements Equipment {
+public class FryingPan implements EquipmentInterface {
 
     private String equipmentName = "Frying Pan";
     private double equipmentValue = 30;

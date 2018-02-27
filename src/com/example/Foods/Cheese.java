@@ -2,7 +2,7 @@ package com.example.Foods;
 
 import com.example.*;
 
-public class Cheese implements Food {
+public class Cheese implements FoodInterface {
 
     private String foodName = "Cheese";
     private double foodValue = .15;

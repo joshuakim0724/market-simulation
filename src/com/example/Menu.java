@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class Menu {
 
     private Food[] foodAvailable;
-    private ArrayList<Food> foodAvailableList;
+    private ArrayList<Food> foodAvailableList = new ArrayList<Food>();
 
     private static final double SALE_MULTIPLIER = 1.5;
 

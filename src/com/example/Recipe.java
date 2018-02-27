@@ -1,37 +1,51 @@
 package com.example;
 
-public interface Recipe {
+public class Recipe {
 
-    public String getRecipeName();
+    private String recipeName;
+    private String[] ingredientList;
+    private String[] equipmentList;
+    private Food outputFood;
+    private int timeRequired;
+    private double recipeValue;
+
+
+    public String getRecipeName() {
+        return recipeName;
+    }
     /**
      * A list of food needed to create this recipe
      * @return a list of food needed to create this recipe
      */
-    public String[] getIngredientList();
+    public String[] getIngredientList() {
+        return ingredientList;
+    }
 
     /**
      * @return the food that this recipe will create
      */
-    public Food outputFood();
+    public Food getOutputFood() {
+        return outputFood;
+    }
 
     /**
      * A list of equipment needed to create this recipe
      * @return a list of equipment needed to create this equipment
      */
-    public String[] equipmentList();
+    public String[] getEquipmentList() {
+        return equipmentList;
+    }
 
     /**
      * 1 == 1 minute
      * @return Time needed to create this recipe
      */
-    public int getTimeRequired();
+    public int getTimeRequired() {
+        return timeRequired;
+    }
 
-    public double getRecipeValue();
-
-    /**
-     * Recipes can also be sold at the market at 0.5x the base value
-     * @return this will return how you will get it you sell the recipe for the market
-     */
-    public double sellToMarket();
+    public double getRecipeValue() {
+        return recipeValue;
+    }
 
 }
