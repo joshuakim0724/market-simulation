@@ -4,25 +4,21 @@ import com.example.*;
 import com.example.Foods.*;
 import com.example.Equipments.*;
 
-import java.util.ArrayList;
-
 public class BaconOmeletteRecipe implements Recipe {
 
     private String recipeName = "Bacon Omelette";
-    private ArrayList<Food> ingredientList = new ArrayList<Food>();
-    private ArrayList<Equipment> equipmentList = new ArrayList<Equipment>();
+    private String[] ingredientList = new String[1];
+    private String[] equipmentList = new String[0];
 
     private double recipeValue = 5;
     private static final double MARKET_VALUE = .5;
 
     public BaconOmeletteRecipe() {
-        Bacon bacon = new Bacon();
-        Egg egg = new Egg();
-        ingredientList.add(bacon);
-        ingredientList.add(egg);
+        ingredientList[0] = "bacon";
+        ingredientList[1] = "Egg";
 
-        FryingPan fryingPan = new FryingPan();
-        equipmentList.add(fryingPan);
+        equipmentList[0] = "Frying Pan";
+
     }
 
     @Override
@@ -31,7 +27,7 @@ public class BaconOmeletteRecipe implements Recipe {
     }
 
     @Override
-    public ArrayList<Food> getIngredientList() {
+    public String[] getIngredientList() {
         return ingredientList;
     }
 
@@ -42,7 +38,7 @@ public class BaconOmeletteRecipe implements Recipe {
     }
 
     @Override
-    public ArrayList<Equipment> equipmentList() {
+    public String[] equipmentList() {
         return equipmentList;
     }
 

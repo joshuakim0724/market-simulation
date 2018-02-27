@@ -4,7 +4,7 @@ import com.example.*;
 
 public class EggsAndToast implements Food {
 
-    private String foodName = "Bacon";
+    private String foodName = "Eggs and Toast";
     private double foodValue = 5;
     private static final double MARKET_VALUE = .8;
 

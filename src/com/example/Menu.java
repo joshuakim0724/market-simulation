@@ -5,13 +5,13 @@ import java.util.ArrayList;
 
 public class Menu {
 
-    private ArrayList<Food> foodAvailable;
+    private Food[] foodAvailable;
 
-    public double sellFood(Food food) {
-        double foodBaseValue = food.getFoodValue();
-        foodAvailable.remove(food);
-        return foodBaseValue * 1.5;
-    }
+//    public double sellFood(Food food) {
+//        double foodBaseValue = food.getFoodValue();
+//        foodAvailable.remove(food);
+//        return foodBaseValue * 1.5;
+//    }
 
     public StringBuffer printFoodAvailable() {
         StringBuffer menuOutput = new StringBuffer();

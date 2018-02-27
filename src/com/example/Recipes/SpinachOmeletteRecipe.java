@@ -2,28 +2,16 @@ package com.example.Recipes;
 
 import com.example.*;
 import com.example.Foods.*;
-import com.example.Equipments.*;
-
-import java.util.ArrayList;
 
 public class SpinachOmeletteRecipe implements Recipe {
 
     private String recipeName = "Bacon Omelette";
-    private ArrayList<Food> ingredientList = new ArrayList<Food>();
-    private ArrayList<Equipment> equipmentList = new ArrayList<Equipment>();
+    private String[] ingredientList;
+    private String[] equipmentList;
 
     private double recipeValue = 5;
     private static final double MARKET_VALUE = .5;
 
-    public SpinachOmeletteRecipe() {
-        Spinach spinach = new Spinach();
-        Egg egg = new Egg();
-        ingredientList.add(spinach);
-        ingredientList.add(egg);
-
-        FryingPan fryingPan = new FryingPan();
-        equipmentList.add(fryingPan);
-    }
 
     @Override
     public String getRecipeName() {
@@ -31,7 +19,7 @@ public class SpinachOmeletteRecipe implements Recipe {
     }
 
     @Override
-    public ArrayList<Food> getIngredientList() {
+    public String[] getIngredientList() {
         return ingredientList;
     }
 
@@ -42,7 +30,7 @@ public class SpinachOmeletteRecipe implements Recipe {
     }
 
     @Override
-    public ArrayList<Equipment> equipmentList() {
+    public String[] equipmentList() {
         return equipmentList;
     }
 

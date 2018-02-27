@@ -1,7 +1,5 @@
 package com.example;
 
-import java.util.ArrayList;
-
 public interface Recipe {
 
     public String getRecipeName();
@@ -9,7 +7,7 @@ public interface Recipe {
      * A list of food needed to create this recipe
      * @return a list of food needed to create this recipe
      */
-    public ArrayList<Food> getIngredientList();
+    public String[] getIngredientList();
 
     /**
      * @return the food that this recipe will create
@@ -20,7 +18,7 @@ public interface Recipe {
      * A list of equipment needed to create this recipe
      * @return a list of equipment needed to create this equipment
      */
-    public ArrayList<Equipment> equipmentList();
+    public String[] equipmentList();
 
     /**
      * 1 == 1 minute

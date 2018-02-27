@@ -1,0 +1,135 @@
+{
+  "money": 200,
+  "time" :
+  {
+    "hours" : 0,
+    "minutes" : 0
+  },
+  "Menu" : [],
+  "market" :
+  {
+    "foodAvailable" :
+    [
+      {
+        "foodName" : "Bacon",
+        "foodValue" : ".50"
+      },
+      {
+        "foodName" : "Bacon Omelette",
+        "foodValue" : "6"
+      },
+      {
+        "foodName" : "Bread",
+        "foodValue" : ".50"
+      },
+      {
+        "foodName" : "Breakfast Potatoes",
+        "foodValue" : "3"
+      },
+      {
+        "foodName" : "Cheese",
+        "foodValue" : ".5"
+      },
+      {
+        "foodName" : "Cooked Bacon",
+        "foodValue" : "3"
+      },
+      {
+        "foodName" : "Egg",
+        "foodValue" : ".50"
+      },
+      {
+        "foodName" : "Eggs and Toast",
+        "foodValue" : ".5"
+      },
+      {
+        "foodName" : "Grilled Cheese",
+        "foodValue" : "4"
+      },
+      {
+        "foodName" : "Hash Browns",
+        "foodValue" : "3"
+      },
+      {
+        "foodName" : "Potato",
+        "foodValue" : ".50"
+      },
+      {
+        "foodName" : "Spinach",
+        "foodValue" : ".50"
+      },
+      {
+        "foodName" : "Spinach Omelette",
+        "foodValue" : "6"
+      }
+    ],
+    "equipmentAvilable" :
+    [
+      {
+        "equipmentName" : "Fryer",
+        "equipmentValue" : 50,
+        "unkeepValue" : 2
+      },
+      {
+        "equipmentName" : "Frying Pan",
+        "equipmentValue" : 30,
+        "unkeepValue" : 1.5
+      },
+      {
+        "equipmentName" : "Oven",
+        "equipmentValue" : 100,
+        "unkeepValue" : 4
+      },
+      {
+        "equipmentName" : "Toaster",
+        "equipmentValue" : 25,
+        "unkeepValue" : 1
+      }
+    ],
+    "recipeAvailable" :
+    [
+      {
+        "recipeName" : "Bacon Omlette",
+        "ingreidentList" : ["Bacon", "Egg"],
+        "equipmentList" : ["Frying Pan"],
+        "recipeValue" : 5
+      },
+      {
+        "recipeName" : "Breakfast Potatoes",
+        "ingreidentList" : ["Bacon", "Egg"],
+        "equipmentList" : ["Frying Pan"],
+        "recipeValue" : 3
+      },
+      {
+        "recipeName" : "Cooked Bacon",
+        "ingreidentList" : ["Bacon"],
+        "equipmentList" : ["Frying Pan"],
+        "recipeValue" : 3
+      },
+      {
+        "recipeName" : "Eggs and Toast",
+        "ingreidentList" : ["Egg", "Bread"],
+        "equipmentList" : ["Frying Pan","Toaster"],
+        "recipeValue" : 5
+      },
+      {
+        "recipeName" : "Grilled Cheese",
+        "ingreidentList" : ["Cheese", "Bread"],
+        "equipmentList" : ["Frying Pan"],
+        "recipeValue" : 4
+      },
+      {
+        "recipeName" : "Hash Browns",
+        "ingreidentList" : ["Potato"],
+        "equipmentList" : ["Fryer"],
+        "recipeValue" : 3
+      },
+      {
+        "recipeName" : "Spinach Omeltte",
+        "ingreidentList" : ["Egg", "Spinach"],
+        "equipmentList" : ["Frying Pan"],
+        "recipeValue" : 5
+      }
+    ]
+  }
+}

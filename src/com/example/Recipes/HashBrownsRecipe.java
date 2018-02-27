@@ -9,19 +9,11 @@ import java.util.ArrayList;
 public class HashBrownsRecipe implements Recipe {
 
     private String recipeName = "Hash Browns";
-    private ArrayList<Food> ingredientList = new ArrayList<Food>();
-    private ArrayList<Equipment> equipmentList = new ArrayList<Equipment>();
+    private String[] ingredientList;
+    private String[] equipmentList;
 
     private double recipeValue = 3;
     private static final double MARKET_VALUE = .5;
-
-    public HashBrownsRecipe() {
-        Potato potato = new Potato();
-        ingredientList.add(potato);
-
-        Fryer fryer = new Fryer();
-        equipmentList.add(fryer);
-    }
 
     @Override
     public String getRecipeName() {
@@ -29,7 +21,7 @@ public class HashBrownsRecipe implements Recipe {
     }
 
     @Override
-    public ArrayList<Food> getIngredientList() {
+    public String[] getIngredientList() {
         return ingredientList;
     }
 
@@ -40,7 +32,7 @@ public class HashBrownsRecipe implements Recipe {
     }
 
     @Override
-    public ArrayList<Equipment> equipmentList() {
+    public String[] equipmentList() {
         return equipmentList;
     }
 

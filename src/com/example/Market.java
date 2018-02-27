@@ -1,4 +1,7 @@
 package com.example;
+import com.example.Foods.*;
+
+import java.util.ArrayList;
 
 public class Market {
 
@@ -17,6 +20,4 @@ public class Market {
     public Recipe[] getRecipeAvailable() {
         return recipeAvailable;
     }
-
-
 }
