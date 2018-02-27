@@ -5,7 +5,7 @@ import com.example.*;
 public class Oven implements Equipment {
     private String equipmentName = "Oven";
     private double equipmentValue = 100;
-    private double unkeepValue = 4;
+    private double upkeepValue = 4;
     private static final double MARKET_VALUE = .5;
 
     @Override
@@ -19,13 +19,13 @@ public class Oven implements Equipment {
     }
 
     @Override
-    public double getUnkeepValue() {
-        return unkeepValue;
+    public double getUpkeepValue() {
+        return upkeepValue;
     }
 
     @Override
     public double sellToMarket() {
         double marketValue = equipmentValue * MARKET_VALUE;
-        return ResturantMethods.roundNumber(marketValue);
+        return RestaurantMethods.roundNumber(marketValue);
     }
 }

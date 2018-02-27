@@ -6,7 +6,7 @@ public class Fryer implements Equipment {
 
     private String equipmentName = "Fryer";
     private double equipmentValue = 50;
-    private double unkeepValue = 2;
+    private double upkeepValue = 2;
     private static final double MARKET_VALUE = .5;
 
     @Override
@@ -20,13 +20,13 @@ public class Fryer implements Equipment {
     }
 
     @Override
-    public double getUnkeepValue() {
-        return unkeepValue;
+    public double getUpkeepValue() {
+        return upkeepValue;
     }
 
     @Override
     public double sellToMarket() {
         double marketValue = equipmentValue * MARKET_VALUE;
-        return ResturantMethods.roundNumber(marketValue);
+        return RestaurantMethods.roundNumber(marketValue);
     }
 }

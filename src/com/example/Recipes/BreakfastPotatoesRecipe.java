@@ -34,18 +34,18 @@ public class BreakfastPotatoesRecipe implements Recipe {
     }
 
     @Override
-    public int timeRequired() {
+    public int getTimeRequired() {
         return 5;
     }
 
     @Override
-    public double recipePrice() {
+    public double getRecipeValue() {
         return recipeValue;
     }
 
     @Override
     public double sellToMarket() {
         double marketValue = recipeValue * MARKET_VALUE;
-        return ResturantMethods.roundNumber(marketValue);
+        return RestaurantMethods.roundNumber(marketValue);
     }
 }

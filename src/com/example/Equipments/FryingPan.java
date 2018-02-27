@@ -6,7 +6,7 @@ public class FryingPan implements Equipment {
 
     private String equipmentName = "Frying Pan";
     private double equipmentValue = 30;
-    private double unkeepValue = 1.5;
+    private double upkeepValue = 1.5;
     private static final double MARKET_VALUE = .5;
 
     @Override
@@ -20,13 +20,13 @@ public class FryingPan implements Equipment {
     }
 
     @Override
-    public double getUnkeepValue() {
-        return unkeepValue;
+    public double getUpkeepValue() {
+        return upkeepValue;
     }
 
     @Override
     public double sellToMarket() {
         double marketValue = equipmentValue * MARKET_VALUE;
-        return ResturantMethods.roundNumber(marketValue);
+        return RestaurantMethods.roundNumber(marketValue);
     }
 }

@@ -3,9 +3,14 @@
   "time" :
   {
     "hours" : 0,
-    "minutes" : 0
+    "minutes" : 0,
+    "day" : 0
   },
-  "Menu" : [],
+  "Menu" : {},
+  "foodOwned" : [],
+  "equipmentOwned" : [],
+  "recipeOwned" : [],
+
   "market" :
   {
     "foodAvailable" :

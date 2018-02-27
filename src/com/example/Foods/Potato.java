@@ -20,6 +20,6 @@ public class Potato implements Food {
     @Override
     public double sellToMarket() {
         double marketValue = foodValue * MARKET_VALUE;
-        return ResturantMethods.roundNumber(marketValue);
+        return RestaurantMethods.roundNumber(marketValue);
     }
 }

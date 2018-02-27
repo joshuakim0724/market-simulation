@@ -11,7 +11,7 @@ public interface Equipment {
     /**
      * @return this will return how much it cost to keep an equipment for a day
      */
-    public double getUnkeepValue();
+    public double getUpkeepValue();
 
     /** Equipment can also be sold at the market at 0.5x the base value
      * @return this will return how you will get it you sell the equipment for the market

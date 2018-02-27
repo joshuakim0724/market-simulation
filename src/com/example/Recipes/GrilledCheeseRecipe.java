@@ -2,7 +2,6 @@ package com.example.Recipes;
 
 import com.example.*;
 import com.example.Foods.*;
-import com.example.Equipments.*;
 
 public class GrilledCheeseRecipe implements Recipe {
 
@@ -35,18 +34,18 @@ public class GrilledCheeseRecipe implements Recipe {
     }
 
     @Override
-    public int timeRequired() {
+    public int getTimeRequired() {
         return 10;
     }
 
     @Override
-    public double recipePrice() {
+    public double getRecipeValue() {
         return recipeValue;
     }
 
     @Override
     public double sellToMarket() {
         double marketValue = recipeValue * MARKET_VALUE;
-        return ResturantMethods.roundNumber(marketValue);
+        return RestaurantMethods.roundNumber(marketValue);
     }
 }

@@ -24,7 +24,7 @@ public interface Recipe {
      * 1 == 1 minute
      * @return Time needed to create this recipe
      */
-    public int timeRequired();
+    public int getTimeRequired();
 
     public double getRecipeValue();
 
