@@ -21,5 +21,7 @@ public class SimulationConstants {
     public static final String TIME_IS = "The time is: ";
     public static final String DAY_PASSED = "Amount of days passed: ";
 
-
+    public static final double FOOD_RESELL_VALUE = .8;
+    public static final double EQUIPMENT_RESELL_VALUE = .5;
+    public static final double RECIPE_RESELL_VALUE = .5;
 }

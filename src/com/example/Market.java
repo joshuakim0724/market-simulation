@@ -1,6 +1,8 @@
 package com.example;
 
 import java.lang.StringBuffer;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Market {
 
@@ -19,6 +21,7 @@ public class Market {
     public Recipe[] getRecipeAvailable() {
         return recipeAvailable;
     }
+
 
     public StringBuffer foodAvailableOutput() {
         StringBuffer foodOutput = new StringBuffer();
@@ -44,7 +47,7 @@ public class Market {
         return equipmentOutput;
     }
 
-    public StringBuffer recipeAvailable() {
+    public StringBuffer recipeAvailableOutput() {
         StringBuffer recipeOutput = new StringBuffer();
 
         for (Recipe aRecipeAvailable : recipeAvailable) {
@@ -54,5 +57,65 @@ public class Market {
             recipeOutput.append("\n");
         }
         return recipeOutput;
+    }
+
+    public boolean isFood(String input) {
+        for (Food aFoodAvailable : foodAvailable) {
+            String foodName = aFoodAvailable.getFoodName();
+            if (input.equalsIgnoreCase(foodName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Food getFood(String input) {
+        for (Food aFoodAvailable : foodAvailable) {
+            String foodName = aFoodAvailable.getFoodName();
+            if (input.equalsIgnoreCase(foodName)) {
+                return aFoodAvailable;
+            }
+        }
+        return null;
+    }
+
+    public boolean isEquipment(String input) {
+        for (Equipment aEquipmentAvailable : equipmentAvailable) {
+            String equipmentName = aEquipmentAvailable.getEquipmentName();
+            if (input.equalsIgnoreCase(equipmentName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Equipment getEquipment(String input) {
+        for (Equipment aEquipmentAvailable : equipmentAvailable) {
+            String equipmentName = aEquipmentAvailable.getEquipmentName();
+            if (input.equalsIgnoreCase(equipmentName)) {
+                return aEquipmentAvailable;
+            }
+        }
+        return null;
+    }
+
+    public boolean isRecipe(String input) {
+        for (Recipe aRecipeAvailable : recipeAvailable) {
+            String recipeName = aRecipeAvailable.getRecipeName();
+            if (input.equalsIgnoreCase(recipeName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Recipe getRecipe(String input) {
+        for (Recipe aRecipeAvailable : recipeAvailable) {
+            String recipeName = aRecipeAvailable.getRecipeName();
+            if (input.equalsIgnoreCase(recipeName)) {
+                return aRecipeAvailable;
+            }
+        }
+        return null;
     }
 }
