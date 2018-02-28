@@ -25,10 +25,7 @@ public class Market {
 
     public StringBuffer foodAvailableOutput() {
         StringBuffer foodOutput = new StringBuffer();
-        if (foodAvailable.length == 0) {
-            foodOutput.append("Has no food");
-            return foodOutput;
-        }
+
         for (Food aFoodAvailable : foodAvailable) {
             foodOutput.append(aFoodAvailable.getFoodName());
             foodOutput.append(SimulationConstants.COST);
@@ -40,10 +37,7 @@ public class Market {
 
     public StringBuffer equipmentAvailableOutput() {
         StringBuffer equipmentOutput = new StringBuffer();
-        if (equipmentAvailable.length == 0) {
-            equipmentOutput.append("Has no equipment");
-            return equipmentOutput;
-        }
+
         for (Equipment aEquipmentAvailable : equipmentAvailable) {
             equipmentOutput.append(aEquipmentAvailable.getEquipmentName());
             equipmentOutput.append(SimulationConstants.COST);
@@ -55,10 +49,6 @@ public class Market {
 
     public StringBuffer recipeAvailableOutput() {
         StringBuffer recipeOutput = new StringBuffer();
-        if (recipeAvailable.length == 0) {
-            recipeOutput.append("Has no recipe");
-            return recipeOutput;
-        }
 
         for (Recipe aRecipeAvailable : recipeAvailable) {
             recipeOutput.append(aRecipeAvailable.getRecipeName());
