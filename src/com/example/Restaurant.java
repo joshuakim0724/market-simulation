@@ -177,6 +177,8 @@ public class Restaurant {
         foodOwned.add(food);
 
         time.addMinutes(recipe.getTimeRequired());
+        customerPurchase(recipe.getTimeRequired());
+
         return true;
     }
 
@@ -302,12 +304,20 @@ public class Restaurant {
         return money - amount >= 0;
     }
 
-    public void customerPurchase(int minutes) {
-        if (time.getHours() >= 6 && time.getHours() <= 12) {
-            money += menu.customerSales(menu.getPopularity() * 2);
+    public boolean customerPurchase(int minutes) {
+        double percentage = minutes / 100;
+        double moneyMade = 0;
+
+        if (6 <= time.getHours() && time.getHours() <= 12) {
+            moneyMade += menu.customerSales(menu.getPopularity() * 2 * percentage);
         } else {
-            money += menu.customerSales(menu.getPopularity());
+            moneyMade += menu.customerSales(menu.getPopularity() * percentage);
         }
+        if (moneyMade > 0) {
+            displayMoney();
+            return true;
+        }
+        return false;
     }
 
     public double totalUpkeepCost() {
@@ -316,5 +326,9 @@ public class Restaurant {
             total += anEquipmentOwned.getUpkeepValue();
         }
         return total;
+    }
+
+    public void payUpkeepCost() {
+        money -= totalUpkeepCost();
     }
 }

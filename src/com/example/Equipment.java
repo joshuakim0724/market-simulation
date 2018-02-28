@@ -5,6 +5,9 @@ public class Equipment {
     private double equipmentValue;
     private double upkeepValue;
 
+    /**
+     * @return this will return name of the equipment
+     */
     public String getEquipmentName() {
         return equipmentName;
     }

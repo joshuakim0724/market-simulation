@@ -19,11 +19,24 @@ public class Simulation {
         Scanner scanner = new Scanner(System.in);
         simulationSetup();
         while (!gameFinished) {
+
+            int timeHour = time.getHours();
             userInput(scanner);
+            int newTimeHour = time.getHours();
+
+            if (didDayPass(timeHour, newTimeHour)) {
+                restaurant.payUpkeepCost();
+            }
+            gameFinished = isGameOver();
+
         }
     }
 
-    public static void simulationSetup() {
+    private static boolean didDayPass(int pastTime, int currentTime) {
+        return currentTime < pastTime;
+    }
+
+    private static void simulationSetup() {
         restaurantSetupFromJSON(RestaurantJsonString.BREAKFAST_RESTAURANT);
         market = restaurant.getMarket();
         menu = restaurant.getMenu();
@@ -33,12 +46,16 @@ public class Simulation {
         System.out.println(time.displayTime());
     }
 
-    public static void restaurantSetupFromJSON (String jsonFile) {
+    private static void restaurantSetupFromJSON(String jsonFile) {
         Gson gson = new Gson();
         restaurant = gson.fromJson(jsonFile, Restaurant.class);
     }
 
-    public static void userInput(Scanner scanner) {
+    private static boolean isGameOver() {
+        return restaurant.getMoney() < 0;
+    }
+
+    private static void userInput(Scanner scanner) {
         String input = scanner.nextLine();
         input = input.trim().replaceAll(" +", " ");
 
@@ -59,7 +76,7 @@ public class Simulation {
         }
     }
 
-    public static void oneWordInput(String input) {
+    private static void oneWordInput(String input) {
         if (input.equalsIgnoreCase("wealth")) {
             System.out.println(restaurant.displayMoney());
         }
@@ -77,11 +94,12 @@ public class Simulation {
             inMarket = false;
             System.out.println("Exiting Market");
             time.addHours(1);
+            restaurant.customerPurchase(60);
             System.out.println(time.displayTime());
         }
     }
 
-    public static void twoWordInput(String input1, String input2) {
+    private static void twoWordInput(String input1, String input2) {
         if (input1.equalsIgnoreCase("inventory")) {
             if (input2.equalsIgnoreCase("food")) {
                 System.out.println(restaurant.displayFoodInventory());
@@ -161,11 +179,12 @@ public class Simulation {
         }
     }
 
-    public static void threeWordInput(String input1, String input2, String input3) {
+    private static void threeWordInput(String input1, String input2, String input3) {
         if (input1.equalsIgnoreCase("pass") && input2.equalsIgnoreCase("time")) {
             try {
                 int amount = Integer.parseInt(input3);
                 time.addMinutes(amount);
+                restaurant.customerPurchase(amount);
                 System.out.println(time.displayTime());
 
             } catch (NumberFormatException e) {
