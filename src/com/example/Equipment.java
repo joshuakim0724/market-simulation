@@ -1,6 +1,7 @@
 package com.example;
 
 public class Equipment {
+
     private String equipmentName;
     private double equipmentValue;
     private double upkeepValue;

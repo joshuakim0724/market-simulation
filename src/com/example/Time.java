@@ -10,7 +10,6 @@ public class Time {
     private static final int CLOSING_HOURS = 22;
     private static final int FINAL_HOUR = 24;
     private static final int FINAL_MINUTE = 60;
-    private static final int MARKET_TRIP_TIME = 1;
 
     public int getHours() {
         return hours;
@@ -24,6 +23,10 @@ public class Time {
         return day;
     }
 
+    /**
+     * This will add hours to the time. If it goes past 24 hours, resets back to 0 and adds a day
+     * @param hours amount of hours to add
+     */
     public void addHours(int hours) {
         int addedHours = this.hours + hours;
 
@@ -34,6 +37,10 @@ public class Time {
         this.hours = addedHours;
     }
 
+    /**
+     * This will add minutes to the time. If it goes past 60 minutes, resets back to 0 and adds a hour
+     * @param minutes amount ofminutes to add
+     */
     public void addMinutes(int minutes) {
         int addedMinutes = this.minutes + minutes;
 
@@ -44,6 +51,10 @@ public class Time {
         this.minutes = addedMinutes;
     }
 
+    /**
+     * This will display the current time
+     * @return return a StringBuffer of the current time
+     */
     public StringBuffer displayTime() {
         StringBuffer timeOutput = new StringBuffer();
         /**
@@ -67,19 +78,12 @@ public class Time {
         return timeOutput;
     }
 
-    public boolean isResturantOpen() {
-        return OPENING_HOURS < hours && hours < CLOSING_HOURS;
+    /**
+     * This method checks to see if the restaurant is open
+     * @return true if open, false otherwise
+     */
+    public boolean isRestaurantOpen() {
+        return OPENING_HOURS <= hours && hours <= CLOSING_HOURS;
     }
 
-    public boolean marketTrip() {
-        int addedHours = this.hours + MARKET_TRIP_TIME;
-
-        if (addedHours > FINAL_HOUR) {
-            hours = addedHours - FINAL_HOUR;
-            return true;
-        }
-        hours = addedHours;
-
-        return false;
-    }
 }

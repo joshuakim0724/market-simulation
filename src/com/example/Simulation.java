@@ -1,7 +1,6 @@
 package com.example;
 
 import com.google.gson.Gson;
-import sun.rmi.registry.RegistryImpl_Stub;
 
 import java.util.Scanner;
 
@@ -97,7 +96,7 @@ public class Simulation {
             threeWordInput(inputArray[0], inputArray[1], inputArray[2]);
         }
         else {
-            System.out.println("Invalid Input");
+            System.out.println(ErrorConstants.INVALID_INPUT);
         }
     }
 

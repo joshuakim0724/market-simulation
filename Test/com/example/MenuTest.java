@@ -8,7 +8,6 @@ import static org.junit.Assert.*;
 
 public class MenuTest {
 
-    private Restaurant restaurant;
     private Menu menu;
     private Market market;
     private Food[] foodArray;
@@ -17,7 +16,7 @@ public class MenuTest {
     @Before
     public void setUp() throws Exception {
         Gson gson = new Gson();
-        restaurant = gson.fromJson(RestaurantJsonString.BREAKFAST_RESTAURANT, Restaurant.class);
+        Restaurant restaurant = gson.fromJson(RestaurantJsonString.BREAKFAST_RESTAURANT, Restaurant.class);
         market = restaurant.getMarket();
         menu = restaurant.getMenu();
 

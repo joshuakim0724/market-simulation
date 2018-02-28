@@ -2,10 +2,8 @@ package com.example;
 
 import java.lang.StringBuffer;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Menu {
-    private Food[] foodList;
     private ArrayList<Food> foodAvailableList = new ArrayList<Food>();
 
     private static final double SALE_MULTIPLIER = 1.5;

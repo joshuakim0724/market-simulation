@@ -8,14 +8,13 @@ import static org.junit.Assert.*;
 
 public class RestaurantMethodsTest {
 
-    private Restaurant restaurant;
     private Market market;
     private static final double DELTA = 0.00001;
 
     @Before
     public void setUp() throws Exception {
         Gson gson = new Gson();
-        restaurant = gson.fromJson(RestaurantJsonString.BREAKFAST_RESTAURANT, Restaurant.class);
+        Restaurant restaurant = gson.fromJson(RestaurantJsonString.BREAKFAST_RESTAURANT, Restaurant.class);
         market = restaurant.getMarket();
     }
 

@@ -1,4 +1,5 @@
 package com.example;
+
 import java.lang.StringBuffer;
 import java.util.ArrayList;
 
@@ -382,17 +383,18 @@ public class Restaurant {
     public boolean customerPurchase(int minutes) {
         double multiplier = minutes / SimulationConstants.MINUTE_DIVIDER;
         double moneyMade = 0;
-
-        if (SimulationConstants.BEGINNING_PEAK_HOURS <= time.getHours() &&
-                time.getHours() <= SimulationConstants.CLOSING_PEAK_HOURS) {
-            moneyMade +=
-                    menu.customerSales(menu.getPopularity() * multiplier * SimulationConstants.PEAK_MULTIPLIER);
-        } else {
-            moneyMade += menu.customerSales(menu.getPopularity() * multiplier);
-        }
-        if (moneyMade > 0) {
-            System.out.println(displayMoney());
-            return true;
+        if (time.isRestaurantOpen()) {
+            if (SimulationConstants.BEGINNING_PEAK_HOURS <= time.getHours() &&
+                    time.getHours() <= SimulationConstants.CLOSING_PEAK_HOURS) {
+                moneyMade +=
+                        menu.customerSales(menu.getPopularity() * multiplier * SimulationConstants.PEAK_MULTIPLIER);
+            } else {
+                moneyMade += menu.customerSales(menu.getPopularity() * multiplier);
+            }
+            if (moneyMade > 0) {
+                System.out.println(displayMoney());
+                return true;
+            }
         }
         return false;
     }
