@@ -12,7 +12,7 @@ public class Menu {
 
     public double customerSales(double chance) {
         double amountMade = 0;
-        int numberSold = (int)(Math.random() * chance);
+        int numberSold = (int) Math.ceil((Math.random() * chance));
 
         while (numberSold > 0) {
             int itemSoldIndex = (int)(Math.random() * foodAvailableList.size() - 1);
@@ -107,9 +107,9 @@ public class Menu {
     }
 
     public double getPopularity() {
-        double complexity = getComplexity() / 3;
+        double complexity = getComplexity();
         int uniqueItems = uniqueFood();
 
-        return complexity * uniqueItems;
+        return Math.ceil((complexity + uniqueItems) / 10);
     }
 }

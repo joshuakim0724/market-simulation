@@ -7,8 +7,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MarketTest {
-    Restaurant restaurant;
-    Market market;
+    private Restaurant restaurant;
+    private Market market;
 
     @Before
     public void setUp() throws Exception {

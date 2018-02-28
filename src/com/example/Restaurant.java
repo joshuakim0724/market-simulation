@@ -304,9 +304,9 @@ public class Restaurant {
 
     public void customerPurchase(int minutes) {
         if (time.getHours() >= 6 && time.getHours() <= 12) {
-            money += menu.customerSales(menu.getComplexity() * 2);
+            money += menu.customerSales(menu.getPopularity() * 2);
         } else {
-            money += menu.customerSales(menu.getComplexity());
+            money += menu.customerSales(menu.getPopularity());
         }
     }
 
