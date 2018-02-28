@@ -10,6 +10,20 @@ public class Menu {
 
     private static final double SALE_MULTIPLIER = 1.5;
 
+    public double customerSales(double chance) {
+        double amountMade = 0;
+        int numberSold = (int)(Math.random() * chance);
+
+        while (numberSold > 0) {
+            int itemSoldIndex = (int)(Math.random() * foodAvailableList.size() - 1);
+            Food food = foodAvailableList.get(itemSoldIndex);
+            amountMade += sellFood(food);
+
+            numberSold --;
+        }
+        return amountMade;
+    }
+
     public double sellFood(Food food) {
         if (!isValidFood(food)) {
             return -1; //Returns -1 if you can't sell the food
@@ -18,7 +32,7 @@ public class Menu {
 
         foodAvailableList.remove(food);
 
-        return foodBaseValue * 1.5;
+        return foodBaseValue * SALE_MULTIPLIER;
     }
 
     public boolean isValidFood(Food food) {
@@ -67,5 +81,35 @@ public class Menu {
             menuOutput.append("\n");
         }
         return menuOutput;
+    }
+
+    public int uniqueFood() {
+        ArrayList<String> uniqueFood = new ArrayList<>();
+        int uniqueItems = 0;
+
+        for (Food aFoodAvailableList : foodAvailableList) {
+            String foodName = aFoodAvailableList.getFoodName();
+            if (!uniqueFood.contains(foodName)) {
+                uniqueFood.add(foodName);
+                uniqueItems++;
+            }
+        }
+        return uniqueItems;
+    }
+
+    public double getComplexity() {
+        double totalTime = 0;
+
+        for (Food aFoodAvailableList : foodAvailableList) {
+             totalTime += aFoodAvailableList.getTimeRequired();
+        }
+        return totalTime;
+    }
+
+    public double getPopularity() {
+        double complexity = getComplexity() / 3;
+        int uniqueItems = uniqueFood();
+
+        return complexity * uniqueItems;
     }
 }

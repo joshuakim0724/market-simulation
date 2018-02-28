@@ -4,6 +4,7 @@ public class Food {
 
     private String foodName;
     private double foodValue;
+    private double timeRequired;
 
     public String getFoodName() {
         return foodName;
@@ -14,5 +15,9 @@ public class Food {
      */
     public double getFoodValue() {
         return foodValue;
+    }
+
+    public double getTimeRequired() {
+        return timeRequired;
     }
 }

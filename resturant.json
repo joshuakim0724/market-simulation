@@ -102,6 +102,7 @@
         "outputFood" :
         {
           "foodName" : "BaconOmelette",
+          "timeRequired" : 15,
           "foodValue" : "6"
         }
       },
@@ -114,6 +115,7 @@
         "outputFood" :
         {
           "foodName" : "BreakfastPotatoes",
+          "timeRequired" : 5,
           "foodValue" : 5
         }
       },
@@ -126,6 +128,7 @@
         "outputFood" :
         {
           "foodName" : "CookedBacon",
+          "timeRequired" : 5,
           "foodValue" : 3
         }
       },
@@ -138,6 +141,7 @@
         "outputFood" :
         {
           "foodName" : "EggsAndToast",
+          "timeRequired" : 12,
           "foodValue" : 5
         }
       },
@@ -150,6 +154,7 @@
         "outputFood" :
         {
           "foodName" : "GrilledCheese",
+          "timeRequired" : 10,
           "foodValue" : 4
         }
       },
@@ -162,6 +167,7 @@
         "outputFood" :
         {
           "foodName" : "HashBrowns",
+          "timeRequired" : 5,
           "foodValue" : 3
         }
       },
@@ -174,6 +180,7 @@
         "outputFood" :
         {
           "foodName" : "SpinachOmelette",
+          "timeRequired" : 15,
           "foodValue" : 6
         }
       }

@@ -173,7 +173,6 @@ public class Restaurant {
                 }
             }
         }
-
         Food food = recipe.getOutputFood();
         foodOwned.add(food);
 
@@ -301,5 +300,21 @@ public class Restaurant {
 
     public boolean canBuyItem(double amount) {
         return money - amount >= 0;
+    }
+
+    public void customerPurchase(int minutes) {
+        if (time.getHours() >= 6 && time.getHours() <= 12) {
+            money += menu.customerSales(menu.getComplexity() * 2);
+        } else {
+            money += menu.customerSales(menu.getComplexity());
+        }
+    }
+
+    public double totalUpkeep() {
+        double total = 0;
+        for (Equipment anEquipmentOwned : equipmentOwned) {
+            total += anEquipmentOwned.getUpkeepValue();
+        }
+        return total;
     }
 }
