@@ -29,7 +29,7 @@ public class Time {
 
         while (addedHours > FINAL_HOUR) {
             addedHours = addedHours - FINAL_HOUR;
-            addDay();
+            day++;
         }
         this.hours = addedHours;
     }
@@ -39,19 +39,28 @@ public class Time {
 
         while (addedMinutes >= FINAL_MINUTE) {
             addedMinutes = addedMinutes - FINAL_MINUTE;
-            this.hours ++;
+            addHours(1);
         }
         this.minutes = addedMinutes;
     }
 
-    private void addDay() {
-        day++;
-    }
-
     public StringBuffer displayTime() {
         StringBuffer timeOutput = new StringBuffer();
+        /**
+         * https://stackoverflow.com/questions/275711/add-leading-zeroes-to-number-in-java
+         * Learned how to make width of number 2 so it prints 00 instead of 0
+         */
+        if (hours == 0) {
+            hours = 00;
+        }
+        if (minutes == 0) {
+            minutes = 00;
+        }
 
-        timeOutput.append(SimulationConstants.TIME_IS + hours + ":" + minutes);
+        String hoursFormatted = String.format("%02d", hours);
+        String minutesFormatted = String.format("%02d", minutes);
+
+        timeOutput.append(SimulationConstants.TIME_IS + hoursFormatted + ":" + minutesFormatted);
         timeOutput.append("\n");
         timeOutput.append(SimulationConstants.DAY_PASSED + day);
 

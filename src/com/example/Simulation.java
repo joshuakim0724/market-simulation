@@ -84,13 +84,13 @@ public class Simulation {
     public static void twoWordInput(String input1, String input2) {
         if (input1.equalsIgnoreCase("inventory")) {
             if (input2.equalsIgnoreCase("food")) {
-                restaurant.displayFoodInventory();
+                System.out.println(restaurant.displayFoodInventory());
             }
             else if (input2.equalsIgnoreCase("equipment")) {
-                restaurant.displayEquipmentInventory();
+                System.out.println(restaurant.displayEquipmentInventory());
             }
             else if (input2.equalsIgnoreCase("recipe")) {
-                restaurant.displayRecipeInventory();
+                System.out.println(restaurant.displayRecipeInventory());
             }
             else {
                 System.out.println("Invalid Input");
@@ -100,15 +100,15 @@ public class Simulation {
         if (input1.equalsIgnoreCase("info")) {
             if (market.isFood(input2)) {
                 Food food = market.getFood(input2);
-                RestaurantMethods.getFoodInfo(food);
+                System.out.println(RestaurantMethods.getFoodInfo(food));
             }
             else if (market.isEquipment(input2)) {
                 Equipment equipment = market.getEquipment(input2);
-                RestaurantMethods.getEquipmentInfo(equipment);
+                System.out.println(RestaurantMethods.getEquipmentInfo(equipment));
             }
             else if (market.isRecipe(input2)) {
                 Recipe recipe = market.getRecipe(input2);
-                RestaurantMethods.getRecipeInfo(recipe);
+                System.out.println(RestaurantMethods.getRecipeInfo(recipe));
             }
             else {
                 System.out.println("Invalid Input");
@@ -119,7 +119,7 @@ public class Simulation {
             if (restaurant.cookFood(input2)) {
                 System.out.println(time.displayTime());
             } else {
-                System.out.println("Invalid Food");
+                System.out.println("Cannot cook" + input2);
             }
         }
 
@@ -128,17 +128,17 @@ public class Simulation {
         }
 
         if (inMarket && input1.equalsIgnoreCase("list")) {
-            if (market.isFood(input2)) {
-                market.foodAvailableOutput();
+            if (input2.equalsIgnoreCase("food")) {
+                System.out.println(market.foodAvailableOutput());
             }
-            else if (market.isEquipment(input2)) {
-                market.equipmentAvailableOutput();
+            else if (input2.equalsIgnoreCase("equipment")) {
+                System.out.println(market.equipmentAvailableOutput());
             }
-            else if (market.isRecipe(input2)) {
-                market.recipeAvailableOutput();
+            else if (input2.equalsIgnoreCase("recipe")) {
+                System.out.println(market.recipeAvailableOutput());
             }
             else {
-                System.out.println("Invalid Input");
+                System.out.println("Can't display a list of " + input2);
             }
         }
 
@@ -150,6 +150,15 @@ public class Simulation {
                 System.out.println("Cannot Buy " + input2);
             }
         }
+
+        if (inMarket && input1.equalsIgnoreCase("sell")) {
+            if (restaurant.sellToMarket(input2)) {
+                System.out.println("Sold " + input2);
+            }
+            else {
+                System.out.println("Cannot Sell " + input2);
+            }
+        }
     }
 
     public static void threeWordInput(String input1, String input2, String input3) {
@@ -157,7 +166,7 @@ public class Simulation {
             try {
                 int amount = Integer.parseInt(input3);
                 time.addMinutes(amount);
-                time.displayTime();
+                System.out.println(time.displayTime());
 
             } catch (NumberFormatException e) {
                 System.out.println("This is not a number");
@@ -185,7 +194,7 @@ public class Simulation {
                 }
             }
             else {
-                System.out.println("Invalid Food");
+                System.out.println("Cannot cook" + input2);
             }
             System.out.println(time.displayTime());
         }
@@ -202,7 +211,7 @@ public class Simulation {
             }
         }
 
-        if (input1.equalsIgnoreCase("menu") && input2.equalsIgnoreCase("removed")) {
+        if (input1.equalsIgnoreCase("menu") && input2.equalsIgnoreCase("remove")) {
             if (market.isFood(input3)) {
                 Food food = market.getFood(input3);
                 if (menu.removeItem(food)) {
@@ -225,10 +234,40 @@ public class Simulation {
             }
 
             if (restaurant.buyFromMarket(input2)) {
+                amount --;
+                System.out.println("Bought " + input2);
                 while (amount > 0) {
                     if (!restaurant.buyFromMarket(input2)) {
                         System.out.println("You ran out of money. Bought " + amount + " times");
+                        break;
                     }
+                    System.out.println("Bought " + input2);
+                    amount--;
+                }
+            }
+            else {
+                System.out.println("Invalid Item Input");
+            }
+        }
+
+        if (inMarket && input1.equalsIgnoreCase("sell")) {
+            int amount = 0;
+
+            try {
+                amount = Integer.parseInt(input3);
+            } catch (NumberFormatException e) {
+                System.out.println("This is not a number");
+                System.out.println(e.getMessage());
+            }
+
+            if (restaurant.sellToMarket(input2)) {
+                amount --;
+                System.out.println("Sold " + input2);
+                while (amount > 0) {
+                    if (!restaurant.sellToMarket(input2)) {
+                        System.out.println("You no longer own " + input2);
+                    }
+                    System.out.println("Sold " + input2);
                     amount--;
                 }
             }

@@ -6,11 +6,14 @@ public class RestaurantJsonString {
             "  \"money\": 200,\n" +
             "  \"time\" :\n" +
             "  {\n" +
-            "    \"hours\" : 00,\n" +
-            "    \"minutes\" : 00,\n" +
+            "    \"hours\" : 0,\n" +
+            "    \"minutes\" : 0,\n" +
             "    \"day\" : 0\n" +
             "  },\n" +
-            "  \"Menu\" : {},\n" +
+            "  \"menu\" :\n" +
+            "  {\n" +
+            "    \"foodList\" : []\n" +
+            "  },\n" +
             "\n" +
             "  \"market\" :\n" +
             "  {\n" +
@@ -121,13 +124,13 @@ public class RestaurantJsonString {
             "      {\n" +
             "        \"recipeName\" : \"CookedBaconRecipe\",\n" +
             "        \"ingredientList\" : [\"Bacon\"],\n" +
-            "        \"equipmentList\" : [\"Frying Pan\"],\n" +
+            "        \"equipmentList\" : [\"FryingPan\"],\n" +
             "        \"recipeValue\" : 3.00,\n" +
             "        \"timeRequired\" : 5,\n" +
             "        \"outputFood\" :\n" +
             "        {\n" +
             "          \"foodName\" : \"CookedBacon\",\n" +
-            "          \"foodValue\" : 5\n" +
+            "          \"foodValue\" : 3\n" +
             "        }\n" +
             "      },\n" +
             "      {\n" +
@@ -175,7 +178,7 @@ public class RestaurantJsonString {
             "        \"outputFood\" :\n" +
             "        {\n" +
             "          \"foodName\" : \"SpinachOmelette\",\n" +
-            "          \"foodValue\" : 3\n" +
+            "          \"foodValue\" : 6\n" +
             "        }\n" +
             "      }\n" +
             "    ]\n" +

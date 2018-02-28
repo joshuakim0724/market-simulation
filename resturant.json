@@ -6,7 +6,10 @@
     "minutes" : 0,
     "day" : 0
   },
-  "Menu" : {},
+  "menu" :
+  {
+    "foodList" : []
+  },
 
   "market" :
   {
@@ -117,13 +120,13 @@
       {
         "recipeName" : "CookedBaconRecipe",
         "ingredientList" : ["Bacon"],
-        "equipmentList" : ["Frying Pan"],
+        "equipmentList" : ["FryingPan"],
         "recipeValue" : 3.00,
         "timeRequired" : 5,
         "outputFood" :
         {
           "foodName" : "CookedBacon",
-          "foodValue" : 5
+          "foodValue" : 3
         }
       },
       {
@@ -171,7 +174,7 @@
         "outputFood" :
         {
           "foodName" : "SpinachOmelette",
-          "foodValue" : 3
+          "foodValue" : 6
         }
       }
     ]

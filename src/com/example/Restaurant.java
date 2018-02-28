@@ -102,13 +102,6 @@ public class Restaurant {
             inventory.append("\n");
         }
 
-        inventory.append(SimulationConstants.RECIPE);
-        inventory.append("\n");
-        for (Recipe aRecipe: recipeOwned) {
-            inventory.append(aRecipe.getRecipeName());
-            inventory.append("\n");
-        }
-
         return inventory;
     }
 
@@ -126,19 +119,18 @@ public class Restaurant {
     }
 
     public boolean cookFood(String foodName) {
-        foodName += "Recipe";
+        String recipeName = foodName + "Recipe";
         Recipe recipe = null;
 
         for (Recipe aRecipeOwned : recipeOwned) {
-            if (aRecipeOwned.getRecipeName().equalsIgnoreCase(foodName)) {
+            if (aRecipeOwned.getRecipeName().equalsIgnoreCase(recipeName)) {
                 recipe = aRecipeOwned;
             }
         }
 
-        if (recipe == null || !recipeOwned.contains(recipe)) {
+        if (recipe == null) {
             return false;
         }
-
         String[] equipmentList = recipe.getEquipmentList();
 
         String[] foodList = recipe.getIngredientList();
@@ -170,26 +162,36 @@ public class Restaurant {
             if (!foodExists) {
                 return false;
             }
-
         }
-        for (String foodListName : foodList) {
-            for (Food aFoodOwned : foodOwned) {
-                String foodOwnedName = aFoodOwned.getFoodName();
-                if (foodListName.equalsIgnoreCase(foodOwnedName)) {
-                    foodOwned.remove(aFoodOwned);
+
+        for (int i = 0; i < foodList.length; i++) {
+            for (int j = 0; j <foodOwned.size(); j++) {
+                String foodOwnedName = foodOwned.get(j).getFoodName();
+                if (foodList[i].equalsIgnoreCase(foodOwnedName)) {
+                    foodOwned.remove(j);
+                    break;
                 }
             }
         }
+
+        Food food = recipe.getOutputFood();
+        foodOwned.add(food);
+
         time.addMinutes(recipe.getTimeRequired());
         return true;
     }
 
-    public boolean addItemToMenu(Food food) {
-        if (!foodOwned.contains(food)) {
-            return false;
+    public boolean addItemToMenu(Food foodInput) {
+        String foodInputName = foodInput.getFoodName();
+
+        for (Food aFoodOwned : foodOwned) {
+            String foodOwnedName = aFoodOwned.getFoodName();
+            if (foodInputName.equalsIgnoreCase(foodOwnedName)) {
+                menu.addItem(foodInput);
+                return true;
+            }
         }
-        menu.addItem(food);
-        return true;
+        return false;
     }
 
     public boolean buyFromMarket(String itemName) {
