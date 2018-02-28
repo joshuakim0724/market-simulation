@@ -21,6 +21,7 @@
       },
       {
         "foodName" : "BaconOmelette",
+        "timeRequired" : 15,
         "foodValue" : "6"
       },
       {
@@ -29,6 +30,7 @@
       },
       {
         "foodName" : "BreakfastPotatoes",
+        "timeRequired" : 5,
         "foodValue" : "3"
       },
       {
@@ -37,6 +39,7 @@
       },
       {
         "foodName" : "CookedBacon",
+        "timeRequired" : 5,
         "foodValue" : "3"
       },
       {
@@ -45,14 +48,17 @@
       },
       {
         "foodName" : "EggsAndToast",
+        "timeRequired" : 12,
         "foodValue" : "5"
       },
       {
         "foodName" : "GrilledCheese",
+        "timeRequired" : 10,
         "foodValue" : "4"
       },
       {
         "foodName" : "HashBrowns",
+        "timeRequired" : 5,
         "foodValue" : "3"
       },
       {
@@ -65,6 +71,7 @@
       },
       {
         "foodName" : "SpinachOmelette",
+        "timeRequired" : 15,
         "foodValue" : "6"
       }
     ],

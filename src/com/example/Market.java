@@ -10,6 +10,8 @@ public class Market {
     private Equipment[] equipmentAvailable;
     private Recipe[] recipeAvailable;
 
+    //Getters
+
     public Food[] getFoodAvailable() {
         return foodAvailable;
     }
@@ -22,7 +24,10 @@ public class Market {
         return recipeAvailable;
     }
 
-
+    /**
+     * This method is used to get of list of available foods
+     * @return a StringBuffer of all the foods you can buy and their cost
+     */
     public StringBuffer foodAvailableOutput() {
         StringBuffer foodOutput = new StringBuffer();
 
@@ -35,6 +40,10 @@ public class Market {
         return foodOutput;
     }
 
+    /**
+     * This method is used to get of list of available equipment
+     * @return a StringBuffer of all the equipment you can buy and their cost
+     */
     public StringBuffer equipmentAvailableOutput() {
         StringBuffer equipmentOutput = new StringBuffer();
 
@@ -47,6 +56,10 @@ public class Market {
         return equipmentOutput;
     }
 
+    /**
+     * This method is used to get of list of available recipes
+     * @return a StringBuffer of all the recipes you can buy and their cost
+     */
     public StringBuffer recipeAvailableOutput() {
         StringBuffer recipeOutput = new StringBuffer();
 
@@ -59,6 +72,11 @@ public class Market {
         return recipeOutput;
     }
 
+    /**
+     * Checks to see if the string is a food object
+     * @param input String that is being tested if it is a food
+     * @return true if it is a food, false if not
+     */
     public boolean isFood(String input) {
         for (Food aFoodAvailable : foodAvailable) {
             String foodName = aFoodAvailable.getFoodName();
@@ -69,6 +87,11 @@ public class Market {
         return false;
     }
 
+    /**
+     * Will get a food from the String input. Used in conjunction with isFood
+     * @param input Food Name that you are getting the food object for
+     * @return Food object called by reference of input, null if not found
+     */
     public Food getFood(String input) {
         for (Food aFoodAvailable : foodAvailable) {
             String foodName = aFoodAvailable.getFoodName();
@@ -79,6 +102,11 @@ public class Market {
         return null;
     }
 
+    /**
+     * Checks to see if the string is a equipment object
+     * @param input String that is being tested if it is a equipment
+     * @return true if it is a equipment, false if not
+     */
     public boolean isEquipment(String input) {
         for (Equipment aEquipmentAvailable : equipmentAvailable) {
             String equipmentName = aEquipmentAvailable.getEquipmentName();
@@ -89,6 +117,11 @@ public class Market {
         return false;
     }
 
+    /**
+     * Will get a Equipment from the String input. Used in conjunction with isEquipment
+     * @param input Equipment Name that you are getting the Equipment object for
+     * @return Equipment object called by reference of input, null if not found
+     */
     public Equipment getEquipment(String input) {
         for (Equipment aEquipmentAvailable : equipmentAvailable) {
             String equipmentName = aEquipmentAvailable.getEquipmentName();
@@ -99,6 +132,11 @@ public class Market {
         return null;
     }
 
+    /**
+     * Checks to see if the string is a recipe object
+     * @param input String that is being tested if it is a recipe
+     * @return true if it is a recipe, false if not
+     */
     public boolean isRecipe(String input) {
         for (Recipe aRecipeAvailable : recipeAvailable) {
             String recipeName = aRecipeAvailable.getRecipeName();
@@ -109,6 +147,11 @@ public class Market {
         return false;
     }
 
+    /**
+     * Will get a Recipe from the String input. Used in conjunction with isRecipe
+     * @param input Recipe Name that you are getting the Recipe object for
+     * @return Recipe object called by reference of input, null if not found
+     */
     public Recipe getRecipe(String input) {
         for (Recipe aRecipeAvailable : recipeAvailable) {
             String recipeName = aRecipeAvailable.getRecipeName();

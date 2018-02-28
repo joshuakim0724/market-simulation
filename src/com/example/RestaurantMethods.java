@@ -4,10 +4,24 @@ import java.lang.StringBuffer;
 
 public class RestaurantMethods {
 
+    private static final double NUMBER_MULTIPLIER = 100.0;
+    private static final double SECOND_TO_LAST_VALUE = 2;
+
+    /**
+     * This will round a number to 2 decimal points
+     * @param number that is going to be rounded
+     * @return rounded number up to 2 decimal points
+     */
     public static double roundNumber(double number) {
-        return Math.round(number*100.0)/100.0;
+        return Math.round(number * NUMBER_MULTIPLIER) / NUMBER_MULTIPLIER;
     }
 
+    /**
+     * This will display a list of information about the food
+     * (Name, Cost)
+     * @param food which getting information from
+     * @return StringBuffer of list of information about the food
+     */
     public static StringBuffer getFoodInfo(Food food) {
         StringBuffer foodInfo = new StringBuffer();
 
@@ -21,6 +35,12 @@ public class RestaurantMethods {
         return foodInfo;
     }
 
+    /**
+     * This will display a list of information about the Equipment
+     * (Name, cost, upkeep cost)
+     * @param equipment which getting information from
+     * @return StringBuffer of list of information about the equipment
+     */
     public static StringBuffer getEquipmentInfo(Equipment equipment) {
         StringBuffer equipmentInfo = new StringBuffer();
 
@@ -38,6 +58,12 @@ public class RestaurantMethods {
         return equipmentInfo;
     }
 
+    /**
+     * This will display a list of information about the recipe
+     * (Name, cost, ingredients needed, equipment needed, time required, what it makes)
+     * @param recipe which getting information from
+     * @return StringBuffer of list of information about the recipe
+     */
     public static StringBuffer getRecipeInfo(Recipe recipe) {
         StringBuffer recipeInfo = new StringBuffer();
 
@@ -63,7 +89,7 @@ public class RestaurantMethods {
         for (int j = 0; j < recipe.getEquipmentList().length; j ++) {
             String equipmentName = recipe.getEquipmentList()[j];
             recipeInfo.append(equipmentName);
-            if (j != recipe.getIngredientList().length - 2) {
+            if (j != recipe.getIngredientList().length - SECOND_TO_LAST_VALUE) {
                 recipeInfo.append(", ");
             }
         }

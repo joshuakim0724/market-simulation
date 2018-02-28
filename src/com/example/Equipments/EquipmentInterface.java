@@ -1,4 +1,4 @@
-package com.example;
+package com.example.Equipments;
 
 public interface EquipmentInterface {
 

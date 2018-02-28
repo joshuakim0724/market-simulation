@@ -25,6 +25,7 @@ public class RestaurantJsonString {
             "      },\n" +
             "      {\n" +
             "        \"foodName\" : \"BaconOmelette\",\n" +
+            "        \"timeRequired\" : 15,\n" +
             "        \"foodValue\" : \"6\"\n" +
             "      },\n" +
             "      {\n" +
@@ -33,6 +34,7 @@ public class RestaurantJsonString {
             "      },\n" +
             "      {\n" +
             "        \"foodName\" : \"BreakfastPotatoes\",\n" +
+            "        \"timeRequired\" : 5,\n" +
             "        \"foodValue\" : \"3\"\n" +
             "      },\n" +
             "      {\n" +
@@ -41,6 +43,7 @@ public class RestaurantJsonString {
             "      },\n" +
             "      {\n" +
             "        \"foodName\" : \"CookedBacon\",\n" +
+            "        \"timeRequired\" : 5,\n" +
             "        \"foodValue\" : \"3\"\n" +
             "      },\n" +
             "      {\n" +
@@ -49,14 +52,17 @@ public class RestaurantJsonString {
             "      },\n" +
             "      {\n" +
             "        \"foodName\" : \"EggsAndToast\",\n" +
+            "        \"timeRequired\" : 12,\n" +
             "        \"foodValue\" : \"5\"\n" +
             "      },\n" +
             "      {\n" +
             "        \"foodName\" : \"GrilledCheese\",\n" +
+            "        \"timeRequired\" : 10,\n" +
             "        \"foodValue\" : \"4\"\n" +
             "      },\n" +
             "      {\n" +
             "        \"foodName\" : \"HashBrowns\",\n" +
+            "        \"timeRequired\" : 5,\n" +
             "        \"foodValue\" : \"3\"\n" +
             "      },\n" +
             "      {\n" +
@@ -69,6 +75,7 @@ public class RestaurantJsonString {
             "      },\n" +
             "      {\n" +
             "        \"foodName\" : \"SpinachOmelette\",\n" +
+            "        \"timeRequired\" : 15,\n" +
             "        \"foodValue\" : \"6\"\n" +
             "      }\n" +
             "    ],\n" +
