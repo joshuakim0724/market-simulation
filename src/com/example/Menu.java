@@ -34,6 +34,9 @@ public class Menu {
      * @return How much food was sold for, or -1 if not a valid food input
      */
     public double sellFood(Food food) {
+        if (food == null) {
+            throw new IllegalArgumentException(ErrorConstants.NULL_FOOD);
+        }
         if (!isValidFood(food)) {
             return -1; //Returns -1 if you can't sell the food
         }
@@ -88,10 +91,11 @@ public class Menu {
      * @return true if you can move the item, false if you can't
      */
     public boolean removeItem(Food food) {
-        if (foodAvailableList.remove(food)) {
-            return true;
+        if (food == null) {
+            throw new IllegalArgumentException(ErrorConstants.NULL_FOOD);
         }
-        return false;
+
+        return foodAvailableList.remove(food);
     }
 
     /**
@@ -101,6 +105,7 @@ public class Menu {
     public StringBuffer menuOutput() {
         StringBuffer menuOutput = new StringBuffer();
         menuOutput.append("Menu: \n");
+
         for (Food aFoodAvailable : foodAvailableList) {
             menuOutput.append(aFoodAvailable.getFoodName());
 

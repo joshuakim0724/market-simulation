@@ -229,6 +229,10 @@ public class Restaurant {
      * @return True if food was able to be added, false otherwise
      */
     public boolean addItemToMenu(Food foodInput) {
+        if (foodInput == null) {
+            throw new IllegalArgumentException(ErrorConstants.NULL_FOOD);
+        }
+
         String foodInputName = foodInput.getFoodName();
 
         for (Food aFoodOwned : foodOwned) {

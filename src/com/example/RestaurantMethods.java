@@ -23,6 +23,10 @@ public class RestaurantMethods {
      * @return StringBuffer of list of information about the food
      */
     public static StringBuffer getFoodInfo(Food food) {
+        if (food == null) {
+            throw new IllegalArgumentException(ErrorConstants.NULL_FOOD);
+        }
+
         StringBuffer foodInfo = new StringBuffer();
 
         foodInfo.append(SimulationConstants.FOOD_NAME);
@@ -42,6 +46,9 @@ public class RestaurantMethods {
      * @return StringBuffer of list of information about the equipment
      */
     public static StringBuffer getEquipmentInfo(Equipment equipment) {
+        if (equipment == null) {
+            throw new IllegalArgumentException(ErrorConstants.NULL_EQUIPMENT);
+        }
         StringBuffer equipmentInfo = new StringBuffer();
 
         equipmentInfo.append(SimulationConstants.EQUIPMENT_NAME);
@@ -65,6 +72,10 @@ public class RestaurantMethods {
      * @return StringBuffer of list of information about the recipe
      */
     public static StringBuffer getRecipeInfo(Recipe recipe) {
+        if (recipe == null) {
+            throw new IllegalArgumentException(ErrorConstants.NULL_RECIPE);
+        }
+
         StringBuffer recipeInfo = new StringBuffer();
 
         recipeInfo.append(SimulationConstants.RECIPE_NAME);
