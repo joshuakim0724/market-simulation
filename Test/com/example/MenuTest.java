@@ -7,11 +7,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MenuTest {
+
     private Restaurant restaurant;
     private Menu menu;
     private Market market;
     private Food[] foodArray;
     private static final double DELTA = 0.00001;
+
     @Before
     public void setUp() throws Exception {
         Gson gson = new Gson();

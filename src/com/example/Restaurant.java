@@ -310,7 +310,7 @@ public class Restaurant {
         }
     }
 
-    public double totalUpkeep() {
+    public double totalUpkeepCost() {
         double total = 0;
         for (Equipment anEquipmentOwned : equipmentOwned) {
             total += anEquipmentOwned.getUpkeepValue();
